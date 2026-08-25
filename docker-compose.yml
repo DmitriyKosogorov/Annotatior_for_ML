@@ -21,7 +21,7 @@ services:
       - EVIDENCE_REGIONS_PATH=/app/evidence_regions_service/data/evidence_regions.json
       - DOCUMENTS_DIR=/app/evidence_regions_service/data/documents
     volumes:
-      - /media/storage/yrl_aida_data/datasets/MMLongBenchDoc
+      - /media/storage/yrl_aida_data/datasets/MMLongBenchDoc:/app/evidence_regions_service/data
       #- /home/kosogorov/datasets/MMLongBenchDoc
       #- ./data:/app/evidence_regions_service/data
     extra_hosts:
