@@ -25,13 +25,13 @@ class SamplesService {
         };
         */
         this.states_dictionary={ 
-             0:"./data/cut_samples/samples_cut_A0.json", 
-             1:"./data/cut_samples/samples_cut_A1.json", 
-             2:"./data/cut_samples/samples_cut_A2.json",
-             3:"./data/cut_samples/samples_cut_A3.json",
-             4:"./data/cut_samples/samples_cut_A4.json",
-             5:"./data/cut_samples/samples_cut_A5.json",
-             999:"./data/samples.json"
+             0:"/app/evidence_regions_service/data/cut_samples/samples_cut_A0.json", 
+             1:"/app/evidence_regions_service/data/cut_samples/samples_cut_A1.json", 
+             2:"/app/evidence_regions_service/data/cut_samples/samples_cut_A2.json",
+             3:"/app/evidence_regions_service/data/cut_samples/samples_cut_A3.json",
+             4:"/app/evidence_regions_service/data/cut_samples/samples_cut_A4.json",
+             5:"/app/evidence_regions_service/data/cut_samples/samples_cut_A5.json",
+             999:"/app/evidence_regions_service/data/samples.json"
         };
         //this.samplesPath = config.paths.samplesJson;
         this.samplesPath = this.states_dictionary[999];
