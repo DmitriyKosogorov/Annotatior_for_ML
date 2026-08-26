@@ -17,7 +17,24 @@ const config = require('../config');
 class SamplesService {
     constructor() {
         /** @private */
-        this.samplesPath = config.paths.samplesJson;
+        /* for docker only
+        this.states_dictionary={ 
+             "0":"/app/evidence_regions_service/data/cut_samples/samples_cut_A0.json", 
+             "1":"/app/evidence_regions_service/data/cut_samples/samples_cut_A1.json", 
+             "2":"/app/evidence_regions_service/data/cut_samples/samples_cut_A2.json"
+        };
+        */
+        this.states_dictionary={ 
+             0:"./data/cut_samples/samples_cut_A0.json", 
+             1:"./data/cut_samples/samples_cut_A1.json", 
+             2:"./data/cut_samples/samples_cut_A2.json",
+             3:"./data/cut_samples/samples_cut_A3.json",
+             4:"./data/cut_samples/samples_cut_A4.json",
+             5:"./data/cut_samples/samples_cut_A5.json",
+             999:"./data/samples.json"
+        };
+        //this.samplesPath = config.paths.samplesJson;
+        this.samplesPath = this.states_dictionary[999];
         /** @type {Array<Object>|null} */
         this.samples = null;
     }
@@ -249,6 +266,12 @@ class SamplesService {
             pages_with_regions: [...pages].sort((a, b) => a - b),
             last_updated: lastUpdated
         };
+    }
+    
+    updateSource(doc_name){
+        console.log(`You selected: ${doc_name}`)
+        this.samplesPath = this.states_dictionary[doc_name];
+        this.samples = null;
     }
 
     // ===========================================================================

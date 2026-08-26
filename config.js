@@ -97,8 +97,9 @@ const config = {
      * @default './data/samples.json'
      * @env SAMPLES_JSON_PATH
      */
-    samplesJson: process.env.SAMPLES_JSON_PATH || 
-      path.join(__dirname, 'data', 'samples.json'),
+    //samplesJson: process.env.SAMPLES_JSON_PATH || 
+    //  path.join(__dirname, 'data', 'samples.json'),
+    samplesJson : path.join(__dirname, 'data', 'cut_samples', 'samples_cut_A0.json'),
     /**
      * Директория с исходными PDF-документами.
      * @default './data/documents'

@@ -252,6 +252,11 @@ class ApiClient {
     async getDocumentInfo(docId) {
         return this.request(`/documents/${encodeURIComponent(docId)}`);
     }
+    
+    //мой код
+    async switchSamples(docnum){
+        return this.request(`/switchSource${docnum}`);
+    }
 
     // ===========================================================================
     // Регионы и разметка

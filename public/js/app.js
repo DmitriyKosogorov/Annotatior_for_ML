@@ -89,6 +89,7 @@ class App {
         this.setupTabs();
         this.setupUIEventListeners();
         this.setupKeyboardShortcuts();
+        this.setupChooseSamples();
         this.renderLegend();
         await this.checkConnection();
         await this.loadDocumentsList();
@@ -135,6 +136,22 @@ class App {
             setTimeout(() => this.syncCanvasSizes(), 100);
         }
     }
+    
+    ///а здесь уже мой код
+    setupChooseSamples(){
+        document.getElementById('dos-select-id').addEventListener('change', (event) => {
+                  //console.log(`You selected: ${event.target.value}`)
+                  this.switchSample(event.target.value);
+              });        
+        
+    }
+    
+    async switchSample(value){
+        var data = await api.switchSamples(value);
+        this.loadDocumentsList();
+        //samplesService.updateSource(value);
+    }
+    //а здесь мой код кончился
 
     // ===========================================================================
     // Callbacks PDF Viewer

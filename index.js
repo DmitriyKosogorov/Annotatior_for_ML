@@ -122,6 +122,16 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+//мой код
+app.get('/api/switchSource:id', (req, res) => {
+    samplesService.updateSource(req.params.id);
+    samplesService.loadSamples();
+    console.log(`✓ Samples loaded: ${samplesService.getAllDocIds().length} documents found`);
+    res.json({
+        status:'ok'
+    });
+});
+
 /**
  * @route GET /api/config
  * @description Возвращает публичную часть конфигурации.
